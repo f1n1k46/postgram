@@ -101,18 +101,29 @@ The Domain layer has no dependencies on other projects. Application depends only
 # 📂 Project Structure
 
 ```text
-Postgram
+Postgram.sln
+
+├── Postgram.API
+│   ├── Controllers
+│   ├── Middleware
+│   ├── Program.cs
+│   └── appsettings.json
 │
-├── Controllers
-├── Services
-├── Repositories
-├── Data
-├── Models
-├── DTOs
-├── Validators
-├── Middleware
-├── Helpers
-└── Program.cs
+├── Postgram.Application
+│   ├── DTOs
+│   ├── Interfaces
+│   ├── Services
+│   └── Validators
+│
+├── Postgram.Domain
+│   └── Models
+│
+└── Postgram.Infrastructure
+    ├── Data
+    ├── Repositories
+    ├── Migrations
+    └── Helpers
+
 ```
 
 ---
