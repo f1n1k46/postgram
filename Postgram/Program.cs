@@ -2,12 +2,13 @@ using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Postgram.Data;
-using Postgram.Helpers;
+using Postgram.Infrastructure.Data;
+using Postgram.Infrastructure.Helpers;
 using Postgram.Middleware;
-using Postgram.Repositories;
-using Postgram.Services;
-using Postgram.Validators;
+using Postgram.Infrastructure.Repositories;
+using Postgram.Application.Services;
+using Postgram.Application.Interfaces;
+using Postgram.Application.Validators;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);

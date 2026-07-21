@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="Postgram/Postgram.csproj" />
+  <Project Path="Postgram.Application/Postgram.Application.csproj" Id="d4039870-4638-4806-898a-b7880fda5778" />
+  <Project Path="Postgram.Domain/Postgram.Domain.csproj" Id="b9fc53bd-0e92-4c18-80ce-afd1d5e2e9ec" />
+  <Project Path="Postgram.Infrastructure/Postgram.Infrastructure.csproj" Id="cafb5d8c-1e73-4f0a-9075-0c307ef57085" />
+  <Project Path="Postgram/Postgram.API.csproj" />
 </Solution>

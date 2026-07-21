@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Postgram.DTOs.CommentDto;
-using Postgram.Services;
+using Postgram.Application.DTOs.CommentDto;
+using Postgram.Application.Interfaces;
 using System.Security.Claims;
 
 namespace Postgram.Controllers

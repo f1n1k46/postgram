@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Postgram.DTOs.AuthDto;
-using Postgram.Services;
+using Postgram.Application.DTOs.AuthDto;
+using Postgram.Application.Interfaces;
 
 namespace Postgram.Controllers
 {
