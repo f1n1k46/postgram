@@ -37,52 +37,64 @@ The project demonstrates modern backend development practices including layered 
 
 ## 🏛️ Architecture
 
-The application follows a layered architecture.
+The application follows the Clean Architecture pattern, separating responsibilities into independent layers with inward-facing dependencies.
 
-```text
-Client
-   │
-   ▼
-Controllers
-   │
-   ▼
-Services
-   │
-   ▼
-Repositories
-   │
-   ▼
-Entity Framework Core
-   │
-   ▼
-SQL Server
-```
+                API
+              /     \
+             ▼       ▼
+      Application  Infrastructure
+             ▼       ▼
+             Domain
 
-### Layers
+### Project Structure
 
-#### Controllers
+**Postgram.API**
 
-Handle HTTP requests and return HTTP responses.
+The entry point of the application.
 
-#### Services
+Responsibilities:
 
-Contain business logic and application rules.
+- Exposes REST API endpoints.
+- Handles HTTP requests and responses.
+- Configures Dependency Injection.
+- Registers middleware and application services.
 
-#### Repositories
+**Postgram.Application**
 
-Handle communication with the database using Entity Framework Core.
+Contains the application's business logic and use cases.
 
-#### DTOs
+Responsibilities:
 
-Transfer data between the client and the server.
+- Business services.
+- DTOs.
+- Validation using FluentValidation.
+- Service interfaces.
+- Application abstractions (repository and infrastructure interfaces).
 
-#### Middleware
+**Postgram.Domain**
 
-Provides centralized exception handling.
+The core of the application.
 
-#### Validators
+Responsibilities:
 
-Validate incoming requests using FluentValidation.
+- Domain entities.
+- Domain enums and business models.
+- Independent of ASP.NET Core, Entity Framework Core, and any external libraries.
+
+**Postgram.Infrastructure**
+
+Implements external dependencies.
+
+Responsibilities:
+
+- Entity Framework Core.
+- DbContext.
+- Repository implementations.
+- JWT token generation.
+- Password hashing.
+- Database migrations.
+
+The Domain layer has no dependencies on other projects. Application depends only on Domain, Infrastructure implements the abstractions defined by the inner layers, and API composes the application through Dependency Injection.
 
 ---
 
